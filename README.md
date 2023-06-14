@@ -22,5 +22,33 @@ Esta é a diferença entre uma lista e um ArrayList.
 
 https://docs.oracle.com/javase/8/docs/api/java/util/List.html
 
-A diferença entre um `List` e um `ArrayList` é que o `List` é uma classe, 
+A classificação pode ser uma ordem natural definida por uma `Comparator interface` ou qualquer ordem específica definida por uma `Comparator interface` em Java.
+Por exemplo:
+```java
+@Setter
+@Getter
+public class Funcionário {
+    private String nome;
+    private String sobrenome;
+    private int idade;
+}
+```
+```java
+import java.util.Comparator;
+
+public class FuncionarioComparator implements Comparator<Funcionário> {
+
+    @Override
+    public int compare(Funcionário o1, Funcionário o2) {
+        return o1.getNome().compareTo(o2.getNome());
+    }
+}
+```
+
+# Set
+`Set` e uma `interface` de Java. Provavelmente a diferença mais importante entre `HashSet` e `TreeSet` é o desempenho. O `HashSet` é mais rápido que o `TreeSet`, o que significa que se você precisar de desempenho, use o `HashSet`, mas o `HashSet` não fornece nenhum tipo de ordenação.
+![Imagen gracias a https://www.java67.com/2012/08/difference-between-hashset-and-treeset-java.html](https://1.bp.blogspot.com/-HG_neFpTy4s/Vr_9ymCdxeI/AAAAAAAAExo/fdeC1zRPs0I/s640/Difference%2Bbetween%2BHashSet%2Band%2BTreeSet%2Bin%2BJava.png)
+
+# 
+Concluindo, a diferença entre listas e conjuntos é que em conjuntos você não pode usar certos métodos como `.get()` e em conjuntos você não pode repetir dados
 
